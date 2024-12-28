@@ -1,7 +1,16 @@
 
+.container {
+    height: 100vh;
+}
 .loading {
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .customsize {
     width: 100px;
+}
+.redirectload {
+    display: none;
 }
