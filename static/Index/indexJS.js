@@ -7,4 +7,4 @@ function load () {
 
 }
 
-setTimeout (load, 4000)
+setTimeout (load, 3000)

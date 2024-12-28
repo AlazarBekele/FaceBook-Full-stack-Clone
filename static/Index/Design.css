@@ -1,12 +1,11 @@
 
-.container {
-    height: 100vh;
-}
 .loading {
     height: 100vh;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
 }
 .customsize {
     width: 100px;

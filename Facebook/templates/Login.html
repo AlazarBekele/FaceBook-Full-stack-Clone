@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    {% include 'Include/Login_Head.html' %}
+
+<body>
+    
+    <div class="container">
+
+        <div class="loading">
+
+            <img class="customsize" id="loadingID" src="{% static "LoadingGIF/loadng.gif" %}" alt="">
+
+        </div>
+
+        <div class="loginHere">
+
+            <div class="card">
+
+                <div>
+
+                    <img class="logIMG" src="{% static 'LoginIMG/loginIMG.png' %}" alt="">
+
+                </div>
+
+                <div>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+    <script src="{% static 'Index/indexJS.js' %}"></script>
+
+</body>
+</html>
