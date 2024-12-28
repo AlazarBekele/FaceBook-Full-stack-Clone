@@ -1,6 +1,7 @@
 
 .loading {
     height: 100vh;
+    background-color: black;
 }
 .customsize {
     width: 100px;
