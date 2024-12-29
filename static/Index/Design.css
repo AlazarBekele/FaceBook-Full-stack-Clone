@@ -35,3 +35,8 @@
     filter: brightness(0) saturate(100%) invert(43%) sepia(95%) saturate(3979%) hue-rotate(193deg) brightness(100%) contrast(109%);
     transition: 0.5s;
 }
+.settingback {
+    border: none;
+    background-color: rgb(221, 221, 221);
+    border-radius: 50%;
+}
