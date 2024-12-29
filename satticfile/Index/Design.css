@@ -1,8 +1,45 @@
 
+body {
+    background: black;
+}
 .loading {
     height: 100vh;
-    background-color: black;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.cancel {
+    display: none;
 }
 .customsize {
     width: 100px;
+}
+.redirectload {
+    display: none;
+}
+.container {
+    overflow: hidden;
+    width: 100%;
+}
+
+
+.facewidth {
+    width: 40px;
+}
+.iconsize {
+    width: 25px;
+}
+.catagores {
+    gap: 80px;
+}
+.iconsize:hover, .iconsize:active {
+    filter: brightness(0) saturate(100%) invert(43%) sepia(95%) saturate(3979%) hue-rotate(193deg) brightness(100%) contrast(109%);
+    transition: 0.5s;
+}
+.settingback {
+    border: none;
+    background-color: rgb(221, 221, 221);
+    border-radius: 50%;
 }

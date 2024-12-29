@@ -23,7 +23,8 @@
 
 
 .facewidth {
-    width: 40px;
+    width: 30px;
+    border-radius: 50%;
 }
 .iconsize {
     width: 25px;
