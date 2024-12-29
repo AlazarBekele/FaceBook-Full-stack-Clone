@@ -41,3 +41,38 @@
     background-color: rgb(221, 221, 221);
     border-radius: 50%;
 }
+.navBARhere {
+    height: 85px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+.containerside {
+    width: 350px;
+    background: rgb(255, 255, 255);
+    position: fixed;
+    padding-top: 110px;
+    padding-left: 25px;
+    height: 100vh;
+}
+.sideiconsize {
+    width: 25px;
+}
+.sideiconsize:hover, .sideiconsizeSee:hover {
+    filter: brightness(0) saturate(100%) invert(43%) sepia(95%) saturate(3979%) hue-rotate(193deg) brightness(100%) contrast(109%);
+    transition: 0.5s;
+}
+.sideiconsizeSee {
+    width: 25px;
+    transform: rotate(-90deg);
+}
+.flexhor {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+}
+.flexhor p {
+    margin-bottom: 0;
+}
