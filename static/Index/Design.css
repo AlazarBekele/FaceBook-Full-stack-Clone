@@ -18,4 +18,20 @@
 }
 .container {
     overflow: hidden;
+    width: 100%;
+}
+
+
+.facewidth {
+    width: 40px;
+}
+.iconsize {
+    width: 25px;
+}
+.catagores {
+    gap: 80px;
+}
+.iconsize:hover, .iconsize:active {
+    filter: brightness(0) saturate(100%) invert(43%) sepia(95%) saturate(3979%) hue-rotate(193deg) brightness(100%) contrast(109%);
+    transition: 0.5s;
 }
