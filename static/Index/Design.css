@@ -7,9 +7,15 @@
     align-items: center;
     background-color: white;
 }
+.cancel {
+    display: none;
+}
 .customsize {
     width: 100px;
 }
 .redirectload {
     display: none;
+}
+.container {
+    overflow: hidden;
 }
