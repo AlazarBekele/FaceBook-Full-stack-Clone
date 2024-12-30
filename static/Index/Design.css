@@ -46,7 +46,7 @@
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1;
+    z-index: 2;
 }
 .containerside {
     width: 350px;
@@ -54,7 +54,8 @@
     position: fixed;
     padding-top: 100px;
     padding-left: 25px;
-    height: 100vh
+    height: 100vh;
+    z-index: 1;
 }
 .sideiconsize {
     width: 25px;
@@ -77,8 +78,11 @@
     margin-bottom: 0;
 }
 .MainBody {
-    padding-top: 90px;
-    padding-left: 390px;
+    position: absolute;
+    margin-top: 90px;
+    margin-left: 390px;
+    background-color: gray;
+    width: 700px;
 }
 .StoryIMG {
     width: 100px;
