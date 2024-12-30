@@ -100,19 +100,13 @@
 .pro {
     padding: 7px 5px 85px 5px;
 }
-.StoryAll {
-    background-color: black;
-    opacity: 70%;
-    display: inline-block;
-    border-radius: 5px;
-}
-.StoryAll:hover {
-    opacity: 100%;
-    transition: 0.5s;
-}
-.StoryAll:hover .TopicFont {
+.hov:hover .TopicFont {
     opacity: 1;
     transition: 0.5s;
+}
+.StoryAll {
+    display: inline-block;
+    border-radius: 5px;
 }
 .proContainer {
     position: absolute;
@@ -130,6 +124,9 @@
     border-radius: 50%;
 }
 .postIMG {
-    max-width: 550px;
+    width: 700px;
     height: 900px;
+}
+.MainPicture {
+    background-color: white;
 }
