@@ -76,3 +76,17 @@
 .flexhor p {
     margin-bottom: 0;
 }
+.MainBody {
+    padding-top: 90px;
+    padding-left: 390px;
+}
+.StoryIMG {
+    width: 100px;
+    height: 160px;
+    border-radius: 5px;
+}
+.StoryContainer {
+    background-color: black;
+    opacity: 70%;
+    display: inline-block;
+}
