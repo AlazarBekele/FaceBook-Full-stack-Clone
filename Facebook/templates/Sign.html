@@ -2,18 +2,23 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{% include "" %}
+{% include "Include/signHead.html" %}
 
-<body>
+<body style="background-color: rgb(17, 17, 26);">
     
-    <div>
+    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
 
-        <div class="Container">
+        <div class="col-md-3">
 
-            <form method="post">
+            <form class="card p-3 bg-light" method="post">
+
+                <h1>Sign here</h1>
 
                 {% csrf_token %}
                 {{ sign.as_p }}
+
+                <button class="btn btn-primary" type="submit">Submit</button>
+                <a class="text-center pt-2 pb-1" href="{% url "login" %}">Already an account Login</a>
 
             </form>
 

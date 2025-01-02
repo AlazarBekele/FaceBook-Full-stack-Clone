@@ -8,30 +8,21 @@
 <body>
     
     <div class="container">
-
+<!-- 
         <div class="loading" id="LoadContainer">
 
             <img class="customsize" id="loadingID" src="{% static 'LoadingGIF/loadng.gif' %}" alt="">
 
-        </div>
+        </div> -->
 
-        <div class="loginHere">
+        <div>
 
-            <div class="card">
+            <form method="post">
 
-                <div>
+                {% csrf_token %}
+                {{ log.as_p }}
 
-                    <img class="logIMG" src="{% static 'LoginIMG/loginIMG.png' %}" alt="">
-
-                </div>
-
-                <div>
-
-                    
-
-                </div>
-
-            </div>
+            </form>
 
         </div>
 
