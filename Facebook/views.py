@@ -1,7 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .form import LogInput, Login_check
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import (
+  authenticate,
+  login,
+  logout
+)
 
 # Create your views here.
 
@@ -10,11 +14,6 @@ from django.contrib.auth import authenticate, login, logout
 def index (request):
 
     return render (request, 'index.html')
-
-
-def login_page (request):
-
-    return render (request, 'Login.html')
 
 
 def sign_up (request):
