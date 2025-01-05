@@ -57,3 +57,8 @@ def login_Page (request):
   }
 
   return render (request, 'Login.html', context=context)
+
+
+def ProfileView (request, id):
+
+  return render (request, 'Profile/Profile.html')

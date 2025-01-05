@@ -11,6 +11,13 @@ class Story (models.Model):
     def __str__(self):
         return self.Story_owner
     
+class SecureIDData (models.Model):
+
+    Token = models.CharField (max_length=8)
+    user_name = models.CharField (max_length=20)
+
+    def __str__(self):
+        return self.user_name
 
 class Profile (models.Model):
 

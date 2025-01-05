@@ -1,5 +1,5 @@
 from django import forms
-from .models import Profile
+from .models import Profile, SecureIDData
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import (
@@ -63,12 +63,32 @@ class Login_check (forms.Form):
   }))
 
 
+# class SecureID (forms.ModelForm):
+#     class Meta:
+        
+#       model = SecureIDData
+#     fields = '__all__'
+
+#     widgets = {
+        
+#       'user_name' : forms.TextInput(attrs={
+#           'class' : 'form-control',
+#           'type' : 'text'
+#       }),
+#       'token' : forms.PasswordInput(attrs={
+#           'class' : 'form-control',
+#           'type' : 'password'
+#       })
+
+#     }
+
 class ProfileInsert (forms.ModelForm):
-    
-    model = Profile
+    class Meta:
+         
+         model = Profile
     fields = '__all__'
 
-    widget = {
+    widgets = {
         
       'First_Name' : forms.TextInput(attrs={
           'class' : 'form-control',
@@ -78,7 +98,7 @@ class ProfileInsert (forms.ModelForm):
           'class' : 'form-control',
           'type' : 'text'
       }),
-      'Profile_Img' : forms.ImageField(attrs={
+      'Profile_Img' : forms.ClearableFileInput(attrs={
           'class' : 'form-control',
           'type' : 'file'
       }),
