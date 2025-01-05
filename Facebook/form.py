@@ -1,4 +1,5 @@
 from django import forms
+from .models import Profile
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import (
@@ -60,3 +61,33 @@ class Login_check (forms.Form):
     'placeholder' : 'Password'
 
   }))
+
+
+class ProfileInsert (forms.ModelForm):
+    
+    model = Profile
+    fields = '__all__'
+
+    widget = {
+        
+      'First_Name' : forms.TextInput(attrs={
+          'class' : 'form-control',
+          'type' : 'text'
+      }),
+      'Last_Name' : forms.TextInput(attrs={
+          'class' : 'form-control',
+          'type' : 'text'
+      }),
+      'Profile_Img' : forms.ImageField(attrs={
+          'class' : 'form-control',
+          'type' : 'file'
+      }),
+      'Bio' : forms.TextInput(attrs={
+          'class' : 'form-control',
+          'type' : 'text'
+      }),
+      'Date' : forms.DateField(attrs={
+          'class' : 'form-control',
+          'type' : 'text'
+      }),
+    }
