@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from .models import Profile
 from django.contrib.auth.decorators import login_required
 from .form import LogInput, Login_check
 from django.contrib.auth import (
@@ -6,6 +7,7 @@ from django.contrib.auth import (
   login,
   logout
 )
+
 
 # Create your views here.
 

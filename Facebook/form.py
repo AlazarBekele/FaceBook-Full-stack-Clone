@@ -88,6 +88,6 @@ class ProfileInsert (forms.ModelForm):
       }),
       'Date' : forms.DateField(attrs={
           'class' : 'form-control',
-          'type' : 'text'
+          'type' : 'date'
       }),
     }
