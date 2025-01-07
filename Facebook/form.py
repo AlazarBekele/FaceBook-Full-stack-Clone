@@ -1,5 +1,5 @@
 from django import forms
-from .models import Profile, SecureIDData
+from .models import Profile, SecureIDData, Story
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import (
@@ -80,3 +80,22 @@ class secureToken (forms.ModelForm):
                 'type' : 'password'
             })
         }
+
+
+class postHouse (forms.ModelForm):
+    class Meta:
+        model = Story
+        fields = '__all__'
+
+        widgets = {
+            'Story_owner' : forms.TextInput(attrs={
+               'class' : 'form-control',               
+            }),
+            'About_story' : forms.TextInput(attrs={
+               'class' : 'form-control',               
+            }),
+            'Story' : forms.ClearableFileInput(attrs={
+               'class' : 'form-control', 
+               'type' : 'file'              
+            })
+        } 

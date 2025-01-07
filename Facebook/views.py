@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Profile
 from django.contrib.auth.decorators import login_required
-from .form import LogInput, Login_check
+from .form import LogInput, Login_check, postHouse
 from django.contrib.auth import (
   authenticate,
   login,
@@ -71,4 +71,15 @@ def Token (request, tokenID):
 
 def postStory (request):
 
-  return render (request, 'Post/Story/post_story.html')
+  post = postHouse (request.POST or None)
+  if request.method == 'POST':
+    if post.is_valid():
+
+      post.save()
+      return redirect ('index')
+
+  context = {
+    'post' : post
+  }
+
+  return render (request, 'Post/Story/post_story.html', context=context)

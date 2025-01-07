@@ -5,7 +5,7 @@ from .views import (
     sign_up,
     ProfileView,
     Token,
-    postStory
+    postStory,
 )
 
 
@@ -15,5 +15,5 @@ urlpatterns = [
     path ('signup/', sign_up, name='signup'),
     path ('profile/<str:id>', ProfileView, name='profile'),
     path ('token/<str:tokenID>', Token, name='Token'),
-    path ('story/', postStory, name='story')
+    path ('story/', postStory, name='story'),
 ]
