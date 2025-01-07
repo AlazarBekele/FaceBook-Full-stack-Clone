@@ -76,7 +76,6 @@ def postStory (request):
     if post.is_valid():
 
       post.save()
-      return redirect ('index')
 
   context = {
     'post' : post

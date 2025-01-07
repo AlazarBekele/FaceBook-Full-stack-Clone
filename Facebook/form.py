@@ -85,7 +85,7 @@ class secureToken (forms.ModelForm):
 class postHouse (forms.ModelForm):
     class Meta:
         model = Story
-        fields = '__all__'
+        fields = ['Story_owner', 'About_story', 'Story']
 
         widgets = {
             'Story_owner' : forms.TextInput(attrs={
