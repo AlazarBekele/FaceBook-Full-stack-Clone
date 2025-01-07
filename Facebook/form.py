@@ -62,52 +62,21 @@ class Login_check (forms.Form):
 
   }))
 
+  # Profile Token Container
 
-# class SecureID (forms.ModelForm):
-#     class Meta:
-        
-#       model = SecureIDData
-#     fields = '__all__'
-
-#     widgets = {
-        
-#       'user_name' : forms.TextInput(attrs={
-#           'class' : 'form-control',
-#           'type' : 'text'
-#       }),
-#       'token' : forms.PasswordInput(attrs={
-#           'class' : 'form-control',
-#           'type' : 'password'
-#       })
-
-#     }
-
-class ProfileInsert (forms.ModelForm):
+class secureToken (forms.ModelForm):
     class Meta:
-         
-         model = Profile
-    fields = '__all__'
-
-    widgets = {
         
-      'First_Name' : forms.TextInput(attrs={
-          'class' : 'form-control',
-          'type' : 'text'
-      }),
-      'Last_Name' : forms.TextInput(attrs={
-          'class' : 'form-control',
-          'type' : 'text'
-      }),
-      'Profile_Img' : forms.ClearableFileInput(attrs={
-          'class' : 'form-control',
-          'type' : 'file'
-      }),
-      'Bio' : forms.TextInput(attrs={
-          'class' : 'form-control',
-          'type' : 'text'
-      }),
-      'Date' : forms.DateField(attrs={
-          'class' : 'form-control',
-          'type' : 'date'
-      }),
-    }
+        model = SecureIDData
+        fields = '__all__'
+
+        widgets = {
+            'Token' : forms.TextInput(attrs={
+                'class' : 'form-control',
+                'type' : 'text'
+            }),
+            'user_name' : forms.TextInput(attrs={
+                'class' : 'form-control',
+                'type' : 'text'
+            })
+        }
