@@ -69,6 +69,6 @@ def Token (request, tokenID):
   return render (request, 'Head/Token.html')
 
 
-def postStory (request, postID):
+def postStory (request):
 
-  return render (request, 'Post/Story/post_html.html')
+  return render (request, 'Post/Story/post_story.html')

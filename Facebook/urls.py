@@ -14,6 +14,6 @@ urlpatterns = [
     path ('login/', login_Page, name='login'),
     path ('signup/', sign_up, name='signup'),
     path ('profile/<str:id>', ProfileView, name='profile'),
-    path ('<str:tokenID>/', Token, name='Token'),
-    path ('<str:postID>/', postStory, name='story')
+    path ('token/<str:tokenID>', Token, name='Token'),
+    path ('story/', postStory, name='story')
 ]

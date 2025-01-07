@@ -92,6 +92,12 @@
     display: inline-block;
     border-radius: 5px;
 }
+.ProfileIMGDEF {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    filter: brightness(0) saturate(100%) invert(85%) sepia(6%) saturate(3%) hue-rotate(323deg) brightness(88%) contrast(91%);
+}
 .ProfileIMG {
     width: 40px;
     height: 40px;
@@ -99,6 +105,13 @@
 }
 .pro {
     padding: 7px 5px 85px 5px;
+}
+.hov1 {
+    opacity: 50%;
+}
+.hov1:hover {
+    opacity: 100%;
+    transition: 0.5s;
 }
 .hov:hover .TopicFont {
     opacity: 1;
