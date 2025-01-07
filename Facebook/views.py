@@ -67,3 +67,8 @@ def ProfileView (request, id):
 def Token (request, tokenID):
 
   return render (request, 'Head/Token.html')
+
+
+def postStory (request, postID):
+
+  return render (request, 'Post/Story/post_html.html')
