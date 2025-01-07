@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.drop-area {
+    width: 80%;
+    max-width: 500px;
+    padding: 40px;
+    background-color: #fff;
+    border: 2px dashed #007bff;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s, border 0.3s;
+}
+
+.drop-area:hover {
+    background-color: #f1f9ff;
+    border: 2px dashed #0056b3;
+}
+
+.drop-area h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.drop-area p {
+    color: #888;
+}
+
+.drop-area input[type="file"] {
+    display: none;
+}
+
+.drop-area .drag-hover {
+    background-color: #e9f7fe;
+}
+
+.drop-area .file-list {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.file-item {
+    margin: 5px 0;
+    padding: 5px;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    color: #007bff;
+    font-size: 14px;
+}
