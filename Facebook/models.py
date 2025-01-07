@@ -6,7 +6,7 @@ class Story (models.Model):
 
     Story_owner = models.CharField (max_length=20)
     About_story = models.CharField (max_length=20)
-    Story = models.ImageField (upload_to='')
+    Story = models.ImageField (upload_to='StoryIMG/')
 
     def __str__(self):
         return self.Story_owner

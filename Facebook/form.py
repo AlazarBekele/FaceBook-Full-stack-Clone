@@ -49,9 +49,8 @@ class LogInput (UserCreationForm):
 class Login_check (forms.Form):
 
   username = forms.CharField (widget = forms.TextInput(attrs={
-      
     'class' : 'form-control parkinsans',
-    'placeholder' : 'Enter Your Email'
+    'placeholder' : 'User Name'
 
   }))
 
