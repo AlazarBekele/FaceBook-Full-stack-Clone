@@ -11,8 +11,7 @@ from django.contrib.auth import (
 
 # Create your views here.
 
-# @login_required (login_url='login')
-
+@login_required (login_url='login')
 def index (request):
 
     return render (request, 'index.html')
@@ -58,7 +57,13 @@ def login_Page (request):
 
   return render (request, 'Login.html', context=context)
 
-
+@login_required (login_url='login')
 def ProfileView (request, id):
 
   return render (request, 'Profile/Profile.html')
+
+
+@login_required (login_url='login')
+def Token (request, tokenID):
+
+  return render (request, 'Head/Token.html')

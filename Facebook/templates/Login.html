@@ -5,9 +5,9 @@
 
     {% include 'Include/Login_Head.html' %}
 
-<body>
+<body style="height: 100vh;">
     
-    <div class="container">
+    <div style="height: 100vh;" class="container">
 <!-- 
         <div class="loading" id="LoadContainer">
 
@@ -15,12 +15,16 @@
 
         </div> -->
 
-        <div>
+        <div class="d-flex justify-content-center align-items-center">
 
-            <form method="post">
+            <form class="col-md-3" method="post">
 
                 {% csrf_token %}
                 {{ log.as_p }}
+
+                <button class="btn btn-primary">Submit</button>
+
+                <a href="{% url "signup" %}"><p>I Don't have any account</p></a>
 
             </form>
 

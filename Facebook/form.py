@@ -58,7 +58,8 @@ class Login_check (forms.Form):
   password = forms.CharField (widget = forms.TextInput(attrs={
       
     'class' : 'form-control parkinsans',
-    'placeholder' : 'Password'
+    'placeholder' : 'Password',
+    'type' : 'password'
 
   }))
 
@@ -75,8 +76,8 @@ class secureToken (forms.ModelForm):
                 'class' : 'form-control',
                 'type' : 'text'
             }),
-            'user_name' : forms.TextInput(attrs={
+            'user_name' : forms.PasswordInput(attrs={
                 'class' : 'form-control',
-                'type' : 'text'
+                'type' : 'password'
             })
         }
