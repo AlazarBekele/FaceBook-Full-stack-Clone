@@ -2,23 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Image Upload</title>
 </head>
 <body>
-    
-    <div>
+    <h1>Upload an Image</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
 
-        <form method="post">
-
-            {% csrf_token %}
-            {{ image.as_p }}
-
-            <button type="submit">Submit</button>
-
-        </form>
-
-    </div>
-
+    {% if form.instance.pk %}
+    <h2>Uploaded Image:</h2>
+    <img src="{{ form.instance.image.url }}" alt="Uploaded Image" width="300">
+    {% endif %}
 </body>
 </html>

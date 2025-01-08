@@ -103,3 +103,9 @@ class ImageUploadForm (forms.ModelForm):
         
         model = ImageUpload
         fields = ['title', 'image']
+
+
+# class ImageUploadForm(forms.ModelForm):
+#     class Meta:
+#         model = ImageUpload
+#         fields = ['title', 'image']
