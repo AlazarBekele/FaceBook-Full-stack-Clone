@@ -68,6 +68,12 @@
     filter: brightness(0) saturate(100%) invert(43%) sepia(95%) saturate(3979%) hue-rotate(193deg) brightness(100%) contrast(109%);
     transition: 0.5s;
 }
+.sideiconsizeSee1 {
+    width: 25px;
+    transform: rotate(-90deg);
+    filter: brightness(0) saturate(100%) invert(17%) sepia(77%) saturate(6549%) hue-rotate(357deg) brightness(101%) contrast(116%);
+    transition: 0.5s;
+}
 .flexhor {
     display: flex;
     align-items: center;

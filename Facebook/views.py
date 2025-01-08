@@ -113,19 +113,8 @@ def upload_image (request):
     return render (request, 'Try.html', context=context)
   
 
-# def image_upload(request):
-#     if request.method == 'POST':
-#         form = ImageUploadForm(request.POST, request.FILES)  # Handle the image file with request.FILES
-#         if form.is_valid():
-#             form.save()  # Save the form data (including the image)
-#             return redirect('image_upload')  # Redirect after successful upload
-#     else:
-#         form = ImageUploadForm()
+def logout_session (request):
 
-#         context = {
-
-#             'form' : form
-
-#         }
-
-#     return render(request, 'Try.html', context=context)
+  logout(request)
+  
+  return render (request, 'index.hmtl')

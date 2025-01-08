@@ -60,6 +60,17 @@
 
         </div>
 
+        <div class="flexhor">
+
+            <form action="{% url 'logout' %}" method="post">
+
+                {% csrf_token %}
+                <button class="btn btn-danger" type="submit">Logout</button>
+
+            </form>
+
+        </div>
+
     </div>
 
 </div>
