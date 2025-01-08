@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Profile
+from .models import Profile, Story
 from django.contrib.auth.decorators import login_required
 from .form import LogInput, Login_check, postHouse
 from django.contrib.auth import (
@@ -76,9 +76,14 @@ def postStory (request):
     if post.is_valid():
 
       post.save()
+      post = postHouse()
+      return redirect ('index')
+    
+  StoryData = Story.objects.filter('created')[:5]
 
   context = {
-    'post' : post
+    'post' : post,
+    'StoryData' : StoryData
   }
 
   return render (request, 'Post/Story/post_story.html', context=context)

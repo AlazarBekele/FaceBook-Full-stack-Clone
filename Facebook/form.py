@@ -85,7 +85,7 @@ class secureToken (forms.ModelForm):
 class postHouse (forms.ModelForm):
     class Meta:
         model = Story
-        fields = ['Story_owner', 'About_story', 'Story']
+        fields = '__all__'
 
         widgets = {
             'Story_owner' : forms.TextInput(attrs={
@@ -93,9 +93,9 @@ class postHouse (forms.ModelForm):
             }),
             'About_story' : forms.TextInput(attrs={
                'class' : 'form-control',               
-            }),
-            'Story' : forms.ClearableFileInput(attrs={
-               'class' : 'form-control', 
-               'type' : 'file'              
             })
+            # 'Story' : forms.ClearableFileInput(attrs={
+            #    'class' : 'form-control', 
+            #    'type' : 'file'              
+            # })
         } 
