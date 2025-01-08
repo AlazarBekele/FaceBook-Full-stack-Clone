@@ -41,3 +41,12 @@ class ImageUpload(models.Model):
 
     def __str__(self):
         return self.title
+    
+
+class ProfileContainer (models.Model):
+
+    Name = models.CharField (max_length=20)
+    LastName = models.CharField (max_length=30)
+    Bio = models.TextField ()
+    Profile_Picture = models.ImageField (upload_to='Profile_Image/')
+    Dob = models.DateTimeField (auto_now_add=True, auto_created=True)
