@@ -32,3 +32,12 @@ class Profile (models.Model):
 
     def __str__(self):
         return self.First_Name + self.Last_Name
+    
+
+class ImageUpload(models.Model):
+
+    title = models.CharField (max_length=100)
+    image = models.ImageField (upload_to='Picture/')
+
+    def __str__(self):
+        return self.title

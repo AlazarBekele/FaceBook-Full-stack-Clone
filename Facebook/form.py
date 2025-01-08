@@ -1,5 +1,5 @@
 from django import forms
-from .models import Profile, SecureIDData, Story
+from .models import Profile, SecureIDData, Story, ImageUpload
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import (
@@ -96,3 +96,10 @@ class postHouse (forms.ModelForm):
             })
 
         }
+
+
+class ImageUploadForm (forms.ModelForm):
+    class Meta:
+        
+        model = ImageUpload
+        fields = ['title', 'image']

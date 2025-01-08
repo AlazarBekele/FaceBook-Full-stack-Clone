@@ -28,10 +28,10 @@
         
             </div>
 
+        {% for UploadedImages in UploadedImage %}
+
             <div class="hov">
-        
-                
-        
+            
                 <div class="proContainer">
         
                     <div class="pro">
@@ -42,18 +42,18 @@
         
                     <a href="{% url 'story' %}"><p class="text-light ps-2 TopicFont">Topic Name</p></a>
         
-                </div></a>
-        
-        
+                </div>
         
                 <div class="StoryContainer">
         
-                    <img class="StoryIMG" src="{% static 'Story IMG/StoryIMG.jpg' %}" alt="">
+                    <img class="StoryIMG" src="{{ UploadedImages.image.url }}" alt="">
         
                 </div>
         
             </div>
         
+        {% endfor %}
+
         </div>
 
         <div class="AskMind pt-4 ">

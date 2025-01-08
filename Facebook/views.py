@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
-from .models import Profile, Story
+from django.shortcuts import render, redirect,HttpResponse
+from .models import Profile, Story, ImageUpload
 from django.contrib.auth.decorators import login_required
-from .form import LogInput, Login_check, postHouse, ImageUpload
+from .form import LogInput, Login_check, postHouse, ImageUploadForm
 from django.contrib.auth import (
   authenticate,
   login,
@@ -13,6 +13,12 @@ from django.contrib.auth import (
 
 @login_required (login_url='login')
 def index (request):
+    
+    StoryUploadedImage = ImageUpload.objects.all()
+
+    context = {
+      'UploadedImage' : StoryUploadedImage
+    }
 
     return render (request, 'index.html')
 
@@ -87,3 +93,21 @@ def postStory (request):
   }
 
   return render (request, 'Post/Story/post_story.html', context=context)
+
+
+def upload_image (request):
+  if request.method == 'POST':
+
+    image = ImageUploadForm(request.POST, request.FILES
+    )
+    if image.is_valid():
+      image.save()
+      return redirect ('index')
+    else:
+      image = HttpResponse('Bad Request!!!!')
+
+    context = {
+      'image' : image
+    }
+
+    return render (request, 'Try.html', context=context)
