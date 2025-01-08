@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Profile, Story
 from django.contrib.auth.decorators import login_required
-from .form import LogInput, Login_check, postHouse
+from .form import LogInput, Login_check, postHouse, ImageUpload
 from django.contrib.auth import (
   authenticate,
   login,
@@ -79,7 +79,7 @@ def postStory (request):
       post = postHouse()
       return redirect ('index')
     
-  StoryData = Story.objects.filter('created')[:5]
+  StoryData = Story.objects.all()
 
   context = {
     'post' : post,

@@ -94,8 +94,5 @@ class postHouse (forms.ModelForm):
             'About_story' : forms.TextInput(attrs={
                'class' : 'form-control',               
             })
-            # 'Story' : forms.ClearableFileInput(attrs={
-            #    'class' : 'form-control', 
-            #    'type' : 'file'              
-            # })
-        } 
+
+        }
