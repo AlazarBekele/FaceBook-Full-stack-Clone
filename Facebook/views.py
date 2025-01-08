@@ -59,25 +59,26 @@ def login_Page (request):
         login (request, user)
         return redirect ('index')
       
-      # else:
-      #   messages.SUCCESS (request, 'Error')
-      
   context = {
     'log' : log
   }
 
   return render (request, 'Login.html', context=context)
 
+
+
 @login_required (login_url='login')
 def ProfileView (request,):
 
-  return render (request, 'Profile/Profile.html')
+  return render (request, 'Profile.html')
+
 
 
 @login_required (login_url='login')
 def Token (request, tokenID):
 
   return render (request, 'Head/Token.html')
+
 
 
 def postStory (request):
@@ -98,6 +99,7 @@ def postStory (request):
   }
 
   return render (request, 'Post/Story/post_story.html', context=context)
+
 
 
 def upload_image (request):
