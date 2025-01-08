@@ -23,6 +23,7 @@ def index (request):
     return render (request, 'index.html')
 
 
+
 def sign_up (request):
 
   sign = LogInput (request.POST or None)
@@ -64,7 +65,7 @@ def login_Page (request):
   return render (request, 'Login.html', context=context)
 
 @login_required (login_url='login')
-def ProfileView (request, id):
+def ProfileView (request,):
 
   return render (request, 'Profile/Profile.html')
 
