@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect,HttpResponse
 from .models import Profile, Story, ImageUpload
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .form import LogInput, Login_check, postHouse, ImageUploadForm
 from django.contrib.auth import (
   authenticate,
@@ -57,6 +58,9 @@ def login_Page (request):
       if user is not None:
         login (request, user)
         return redirect ('index')
+      
+      # else:
+      #   messages.SUCCESS (request, 'Error')
       
   context = {
     'log' : log
@@ -115,7 +119,12 @@ def upload_image (request):
   
 
 def logout_session (request):
-
+    
   logout(request)
+  mess = messages.SUCCESS (request, 'Successfully logout!!')
   
-  return render (request, 'index.hmtl')
+  context = {
+    'message' : mess
+  }
+
+  return render (request, 'logout.html', context=context)
