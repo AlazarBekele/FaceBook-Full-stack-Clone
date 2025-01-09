@@ -1,5 +1,5 @@
 from django import forms
-from .models import Profile, SecureIDData, Story, ImageUpload, ProfileContainer, ProflieContainer2
+from .models import Profile, SecureIDData, Story, ImageUpload, ProfileContainer
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import (
@@ -110,7 +110,7 @@ class CreateProfile (forms.ModelForm):
     class Meta:
         
         model = ProfileContainer
-        fields = ['Profile_Picture', 'Name', 'LastName']
+        fields = '__all__'
 
         widgets = {
             
@@ -126,13 +126,7 @@ class CreateProfile (forms.ModelForm):
              'class' : 'form-control'
          }),
 
-      }
-        
-        model = ProflieContainer2
-        fields = ['Bio', 'Dob']
-
-        widgets = {
-            
+                     
          'Bio' : forms.Textarea(attrs={
              'class' : 'form-control',
              'id' : 'exampleFormControlTextarea1'
@@ -140,13 +134,7 @@ class CreateProfile (forms.ModelForm):
 
          'Dob' : forms.DateInput(attrs={
              'class' : 'form-control',
-             'type' : 'date'
+             'type' : 'Date'
          })
 
-        }
-        
-
-# class CreateProfile2 (forms.ModelForm):
-#     class Meta:
-        
-        
+      }

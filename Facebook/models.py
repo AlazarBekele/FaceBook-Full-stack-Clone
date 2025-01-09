@@ -48,9 +48,5 @@ class ProfileContainer (models.Model):
     Profile_Picture = models.ImageField (upload_to='Profile_Image/')
     Name = models.CharField (max_length=20)
     LastName = models.CharField (max_length=30)
-
-
-class ProflieContainer2 (models.Model):
-
     Bio = models.TextField ()
     Dob = models.DateTimeField (auto_now_add=True, auto_created=True)
