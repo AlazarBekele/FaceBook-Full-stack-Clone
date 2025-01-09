@@ -103,6 +103,7 @@ def postStory (request):
 
 
 def upload_image (request):
+
   if request.method == 'POST':
 
     image = ImageUploadForm(request.POST, request.FILES
@@ -132,6 +133,7 @@ def logout_session (request):
   return render (request, 'logout.html', context=context)
 
 
+ 
 def createprofile(request, id):
 
   try:
@@ -152,7 +154,6 @@ def createprofile(request, id):
 
   context = {
     'create' : create,
-    'EditProfile' : EditProfile
   }
 
   return render (request, 'createprofile.html', context=context)
