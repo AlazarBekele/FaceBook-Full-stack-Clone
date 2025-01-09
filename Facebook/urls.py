@@ -19,5 +19,5 @@ urlpatterns = [
     path ('token/<str:tokenID>', Token, name='Token'),
     path ('story/', postStory, name='story'),
     path ('login/', logout_session, name='logout'),
-    path ('create/', createprofile, name='create'), 
+    path ('create/<str:id>', createprofile, name='create'), 
 ]

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect,HttpResponse
-from .models import Profile, Story, ImageUpload
+from .models import Profile, Story, ImageUpload, ProfileContainer
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .form import LogInput, Login_check, postHouse, ImageUploadForm, CreateProfile
@@ -132,9 +132,17 @@ def logout_session (request):
   return render (request, 'logout.html', context=context)
 
 
-def createprofile(request):
+def createprofile(request, id):
 
-  create = CreateProfile (request.POST or None)
+  try:
+
+    EditProfile = ProfileContainer.objects.get(pk=id)
+  
+  except:
+
+    HttpResponse (request, 'Bad Request!!')
+
+  create = CreateProfile (request.POST or None, instance=EditProfile)
 
   if request.method == 'POST':
     if create.is_valid():
@@ -143,7 +151,8 @@ def createprofile(request):
       messages.success (request, 'Successfully Update!!')
 
   context = {
-    'create' : create
+    'create' : create,
+    'EditProfile' : EditProfile
   }
 
   return render (request, 'createprofile.html', context=context)
