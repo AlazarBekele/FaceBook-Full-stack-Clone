@@ -6,7 +6,8 @@ from .views import (
     ProfileView,
     Token,
     postStory,
-    logout_session
+    logout_session,
+    createprofile
 )
 
 
@@ -17,5 +18,6 @@ urlpatterns = [
     path ('profile/', ProfileView, name='profile'),
     path ('token/<str:tokenID>', Token, name='Token'),
     path ('story/', postStory, name='story'),
-    path ('login/', logout_session, name='logout')
+    path ('login/', logout_session, name='logout'),
+    path ('create/', createprofile, name='create'), 
 ]

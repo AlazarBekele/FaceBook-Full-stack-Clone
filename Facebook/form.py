@@ -1,5 +1,5 @@
 from django import forms
-from .models import Profile, SecureIDData, Story, ImageUpload
+from .models import Profile, SecureIDData, Story, ImageUpload, ProfileContainer, ProflieContainer2
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import (
@@ -103,3 +103,50 @@ class ImageUploadForm (forms.ModelForm):
         
         model = ImageUpload
         fields = ['title', 'image']
+
+
+
+class CreateProfile (forms.ModelForm):
+    class Meta:
+        
+        model = ProfileContainer
+        fields = ['Profile_Picture', 'Name', 'LastName']
+
+        widgets = {
+            
+         'Profile_Picture' : forms.ClearableFileInput(attrs={
+             'class' : 'upload-icon'
+         }),
+            
+         'Name' : forms.TextInput(attrs={
+             'class' : 'form-control'
+         }),
+
+         'LastName' : forms.TextInput(attrs={
+             'class' : 'form-control'
+         }),
+
+      }
+        
+        model = ProflieContainer2
+        fields = ['Bio', 'Dob']
+
+        widgets = {
+            
+         'Bio' : forms.Textarea(attrs={
+             'class' : 'form-control',
+             'id' : 'exampleFormControlTextarea1'
+         }),
+
+         'Dob' : forms.DateInput(attrs={
+             'class' : 'form-control',
+             'type' : 'date'
+         })
+
+        }
+        
+
+# class CreateProfile2 (forms.ModelForm):
+#     class Meta:
+        
+        

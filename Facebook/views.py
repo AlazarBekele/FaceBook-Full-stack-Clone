@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect,HttpResponse
 from .models import Profile, Story, ImageUpload
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .form import LogInput, Login_check, postHouse, ImageUploadForm
+from .form import LogInput, Login_check, postHouse, ImageUploadForm, CreateProfile,CreateProfile2
 from django.contrib.auth import (
   authenticate,
   login,
@@ -130,3 +130,36 @@ def logout_session (request):
   }
 
   return render (request, 'logout.html', context=context)
+
+
+def createprofile(request):
+
+  create = CreateProfile (request.POST or None)
+
+  if request.method == 'POST':
+    if create.is_valid():
+
+      create.save()
+      messages.success (request, 'Successfully Update!!')
+
+  context = {
+    'create' : create
+  }
+
+  return render (request, 'createprofile.html', context=context)
+
+
+def createprofile2 (request):
+
+  create = CreateProfile2 (request.POST or None)
+
+  if request.method == 'POST':
+    if create.is_valid():
+
+      create.save
+
+  context = {
+    'create2' : create
+  }
+
+  return render (request, 'createprofile.html', context=context)
