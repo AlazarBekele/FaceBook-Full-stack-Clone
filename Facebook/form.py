@@ -128,8 +128,7 @@ class CreateProfile (forms.ModelForm):
 
                      
          'Bio' : forms.Textarea(attrs={
-             'class' : 'form-control',
-             'id' : 'exampleFormControlTextarea1'
+             'class' : 'form-control'
          }),
 
          'Dob' : forms.DateInput(attrs={

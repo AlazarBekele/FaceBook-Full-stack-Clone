@@ -57,7 +57,7 @@ def login_Page (request):
 
       if user is not None:
         login (request, user)
-        return redirect ('index')
+        return redirect ('create')
       
   context = {
     'log' : log
@@ -134,17 +134,17 @@ def logout_session (request):
 
 
  
-def createprofile(request, id):
+def createprofile(request):
 
-  try:
+  # try:
 
-    EditProfile = ProfileContainer.objects.get(pk=id)
+  #   EditProfile = ProfileContainer.objects.get(pk=id)
   
-  except:
+  # except:
 
-    HttpResponse (request, 'Bad Request!!')
+  #   HttpResponse (request, 'Bad Request!!')
 
-  create = CreateProfile (request.POST or None, instance=EditProfile)
+  create = CreateProfile (request.POST or None)
 
   if request.method == 'POST':
     if create.is_valid():
