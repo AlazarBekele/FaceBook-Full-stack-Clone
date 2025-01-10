@@ -59,6 +59,7 @@ def login_Page (request, ProID):
         login (request, user)
 
         Data = ProfileContainer.objects.get(pk=ProID)
+        
         if Data is not None:
 
           return redirect ('index')
