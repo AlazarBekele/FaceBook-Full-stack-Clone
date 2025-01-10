@@ -50,3 +50,6 @@ class ProfileContainer (models.Model):
     LastName = models.CharField (max_length=30)
     Dob = models.DateTimeField ()
     Bio = models.TextField ()
+
+    def __str__(self):
+        return self.Name + self.LastName
