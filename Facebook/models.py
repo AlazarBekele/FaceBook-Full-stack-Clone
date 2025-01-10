@@ -52,4 +52,4 @@ class ProfileContainer (models.Model):
     Bio = models.TextField ()
 
     def __str__(self):
-        return self.Name + self.LastName
+        return self.Name + ' ' + self.LastName

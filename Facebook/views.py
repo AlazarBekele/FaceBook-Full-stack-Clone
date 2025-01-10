@@ -43,7 +43,7 @@ def sign_up (request):
 
 
 
-def login_Page (request):
+def login_Page (request, ProID):
 
   log = Login_check(request.POST or None)
 
@@ -57,10 +57,20 @@ def login_Page (request):
 
       if user is not None:
         login (request, user)
-        return redirect ('create')
+
+        Data = ProfileContainer.objects.get(pk=ProID)
+        if Data is not None:
+
+          return redirect ('index')
+    
+        else:
+
+          return HttpResponse ('Bad!!')
+
       
   context = {
-    'log' : log
+    'log' : log,
+    'ProID' : ProID
   }
 
   return render (request, 'Login.html', context=context)
@@ -134,7 +144,7 @@ def logout_session (request):
 
 
  
-def createprofile(request):
+def createprofile(request, id):
 
   # try:
 
@@ -144,7 +154,18 @@ def createprofile(request):
 
   #   HttpResponse (request, 'Bad Request!!')
 
+  # EditProfile = ProfileContainer.objects.get(pk=id)
+
   create = CreateProfile (request.POST or None)
+
+  if id == 'T4b!uP#6yD7l@Wz*9AqJp':
+
+    id = 'T4b!uP#6yD7l@Wz*9AqJp'
+
+  else:
+
+    HttpResponse (request, 'Bad Request!!')
+        
 
   if request.method == 'POST':
     if create.is_valid():
@@ -154,6 +175,8 @@ def createprofile(request):
 
   context = {
     'create' : create,
+    # 'EditProifile' : EditProfile,
+    'id' : id
   }
 
   return render (request, 'createprofile.html', context=context)

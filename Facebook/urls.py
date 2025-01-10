@@ -13,11 +13,11 @@ from .views import (
 
 urlpatterns = [
     path ('', index, name='index'),
-    path ('login/', login_Page, name='login'),
+    path ('login/<int:ProID>/', login_Page, name='login'),
     path ('signup/', sign_up, name='signup'),
     path ('profile/', ProfileView, name='profile'),
     path ('token/<str:tokenID>', Token, name='Token'),
     path ('story/', postStory, name='story'),
     path ('login/', logout_session, name='logout'),
-    path ('create/', createprofile, name='create')
+    path ('create/<str:id>/', createprofile, name='create')
 ]
