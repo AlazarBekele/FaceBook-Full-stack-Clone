@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    {% include "Include/ProfileHead.html" %}
+
+<body style="height: 100vh; width: 100%; overflow: hidden; background-color: rgb(17, 17, 26);">
+    
+    <div class="d-flex justify-content-center p-4">
+
+       <div class="border border-info col-md-8 p-5 d-flex justify-content-around">
+
+            <div>
+
+
+                <div>
+
+                    <img class="MainImg" src="https://img.freepik.com/free-vector/young-man-with-glasses-illustration_1308-174706.jpg?t=st=1736367617~exp=1736371217~hmac=4790b70f6f6c0490fc7345d9cceb4bb43e5fa7e9af5fc6d274943ca3b02c8510&w=740" alt="">
+    
+                </div>
+    
+                <div class="text-light">
+    
+                    <h1 class="dm-serif-text-regular">Name</h1>
+                    <h5>Work On</h5>
+    
+                    <p>Bio</p>
+
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Edit
+                    </button>
+    
+                </div>
+
+
+            </div>
+
+            <div>
+
+
+                <div class="d-flex justify-content-around align-items-center gap-4 text-light">
+    
+                    <img class="firendIMG" src="https://img.freepik.com/free-vector/smiling-person-with-glasses_1308-175971.jpg?t=st=1736420803~exp=1736424403~hmac=c4939057897576f2f570afa673891493c6d0df06b8558a49767ac8aad514236c&w=740" alt="">
+    
+                    <p class="m-0">Name</p>
+    
+                </div>
+    
+           </div>
+
+       </div>
+
+
+    </div>
+
+
+    <!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+            <form method="post">
+
+                {% csrf_token %}
+                {{ create.as_p }}
+
+            </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+</body>
+</html>

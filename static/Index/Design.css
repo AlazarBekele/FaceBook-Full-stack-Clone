@@ -68,6 +68,12 @@
     filter: brightness(0) saturate(100%) invert(43%) sepia(95%) saturate(3979%) hue-rotate(193deg) brightness(100%) contrast(109%);
     transition: 0.5s;
 }
+.sideiconsizeSee1 {
+    width: 25px;
+    transform: rotate(-90deg);
+    filter: brightness(0) saturate(100%) invert(17%) sepia(77%) saturate(6549%) hue-rotate(357deg) brightness(101%) contrast(116%);
+    transition: 0.5s;
+}
 .flexhor {
     display: flex;
     align-items: center;
@@ -92,6 +98,12 @@
     display: inline-block;
     border-radius: 5px;
 }
+.ProfileIMGDEF {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    filter: brightness(0) saturate(100%) invert(85%) sepia(6%) saturate(3%) hue-rotate(323deg) brightness(88%) contrast(91%);
+}
 .ProfileIMG {
     width: 40px;
     height: 40px;
@@ -99,6 +111,13 @@
 }
 .pro {
     padding: 7px 5px 85px 5px;
+}
+.hov1 {
+    opacity: 50%;
+}
+.hov1:hover {
+    opacity: 100%;
+    transition: 0.5s;
 }
 .hov:hover .TopicFont {
     opacity: 1;
@@ -129,4 +148,8 @@
 }
 .MainPicture {
     background-color: white;
+}
+.logContainer {
+    height: 100vh;
+    width: 100%;
 }

@@ -1,4 +1,5 @@
 from django import forms
+from .models import Profile, SecureIDData
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import (
@@ -48,15 +49,41 @@ class LogInput (UserCreationForm):
 class Login_check (forms.Form):
 
   username = forms.CharField (widget = forms.TextInput(attrs={
-      
     'class' : 'form-control parkinsans',
-    'placeholder' : 'Enter Your Email'
+    'placeholder' : 'User Name'
 
   }))
 
   password = forms.CharField (widget = forms.TextInput(attrs={
       
     'class' : 'form-control parkinsans',
-    'placeholder' : 'Password'
+    'placeholder' : 'Password',
+    'type' : 'password'
 
   }))
+
+
+# class SecureID (forms.ModelForm):
+#     class Meta:
+        
+#       model = SecureIDData
+#     fields = '__all__'
+
+#     widgets = {
+        
+#       'user_name' : forms.TextInput(attrs={
+#           'class' : 'form-control',
+#           'type' : 'text'
+#       }),
+#       'token' : forms.PasswordInput(attrs={
+#           'class' : 'form-control',
+#           'type' : 'password'
+#       })
+
+#     }
+
+class ProfileInsert (forms.ModelForm):
+    class Meta:
+        
+        model = Profile
+        fields = '__all__'
