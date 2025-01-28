@@ -60,10 +60,3 @@ class Login_check (forms.Form):
     'placeholder' : 'Password'
 
   }))
-
-
-# class Story (forms.ModelForm):
-    
-#    class Meta:
-       
-#       model = 
