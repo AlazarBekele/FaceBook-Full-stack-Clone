@@ -43,3 +43,10 @@
 .svgIcon {
     width: 40px;
 }
+
+.IconContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
